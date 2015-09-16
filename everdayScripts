@@ -1,5 +1,12 @@
-This will search for all lines in the input file containing 
-xxxxxxfirstPatternFollowedByxxxxxxxsecondPatternxxxxxxxxxxxx
-and copy the output to outputfile
+#This will search for all lines in the input file containing 
+#xxxxxxfirstPatternFollowedByxxxxxxxsecondPatternxxxxxxxxxxxx
+#and copy the output to outputfile
 
 egrep '.*firstPatternFollowedBy.*secondPattern.*' inputFile > outputfile
+
+
+#This will search for all lines in the input file containing 
+#xxxxxxfirstPatternFollowedByxxxxxxxsecondPatternxxxxxxxxxxxx 
+#and not containing excludepattern
+#and copy the output to outputfile
+awk '/.*firstPatternFollowedBy.*secondPattern.*/ && !/excludepattern/' outputfile > inp
