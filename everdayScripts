@@ -9,4 +9,11 @@ egrep '.*firstPatternFollowedBy.*secondPattern.*' inputFile > outputfile
 #xxxxxxfirstPatternFollowedByxxxxxxxsecondPatternxxxxxxxxxxxx 
 #and not containing excludepattern
 #and copy the output to outputfile
-awk '/.*firstPatternFollowedBy.*secondPattern.*/ && !/excludepattern/' outputfile > inp
+awk '/.*firstPatternFollowedBy.*secondPattern.*/ && !/excludepattern/' inputFile > outputfile
+
+
+#This will search for all lines in the input file containing 
+#xxxxxxfirstPatternFollowedByxxxxxxxsecondPatternxxxxxxxxxxxx or
+#xxxxxxxxxorPatternxxxxxxxxxxx
+#and copy the output to outputfile
+awk ' /.*firstPatternFollowedBy.*secondPattern.*/ || /orPattern/' inputFile > outputFile
