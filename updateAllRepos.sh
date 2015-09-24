@@ -1,7 +1,9 @@
+# destructive update of all git repos within this directory to match origin
+# modified version of script I found here https://gist.github.com/mslinn/3151915 
 function update {
   local d="$1"
   if [ -d "$d" ]; then
-    if [ -e "$d/.ignore" ]; then 
+    if ["$d/.ignore" ]; then 
       echo "\nIgnoring $d"
     else
       cd $d > /dev/null 
