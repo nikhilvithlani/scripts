@@ -1,18 +1,17 @@
-# destructive update of all git repos within this directory to match origin
 function update {
   local d="$1"
   if [ -d "$d" ]; then
     if [ -e "$d/.ignore" ]; then 
       echo "\nIgnoring $d"
     else
-      cd $d 
+      cd $d > /dev/null 
       if [ -d ".git" ]; then
         echo "\nUpdating `pwd`"
         git reset --hard origin
       else
         scan *
       fi
-      cd ..
+      cd .. > /dev/null
     fi
   fi
 }
