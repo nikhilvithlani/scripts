@@ -9,7 +9,8 @@ function update {
       cd $d > /dev/null 
       if [ -d ".git" ]; then
         echo "\nUpdating `pwd`"
-        git reset --hard origin
+        git fetch origin
+        git reset --hard origin/mainline
       else
         scan *
       fi
